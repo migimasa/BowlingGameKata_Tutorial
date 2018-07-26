@@ -59,12 +59,17 @@ namespace BowlingGameKata.Tests
         [Fact]
         public void TestOneStrike()
         {
-            g.Roll(10); //strike
+            RollStrike();
             g.Roll(3);
             g.Roll(4);
             RollMany(n: 16, pins: 0);
 
             Assert.Equal(24, g.Score());
+        }
+
+        private void RollStrike()
+        {
+            g.Roll(10);
         }
     }
 }

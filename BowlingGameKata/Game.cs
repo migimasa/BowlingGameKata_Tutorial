@@ -21,7 +21,7 @@ namespace BowlingGameKata
 
             for (int frame = 0; frame < 10; frame++)
             {
-                if (rolls[frameIndex] == 10) //strike
+                if (IsStrike(frameIndex))
                 {
                     score += 10 + StrikeBonus(frameIndex);
                     frameIndex++;
@@ -41,6 +41,10 @@ namespace BowlingGameKata
             return score;
         }
 
+        private bool IsStrike(int frameIndex)
+        {
+            return rolls[frameIndex] == 10;
+        }
 
         private int SumOfBallsInFrame(int frameIndex)
         {
