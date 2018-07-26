@@ -71,5 +71,13 @@ namespace BowlingGameKata.Tests
         {
             g.Roll(10);
         }
+
+        [Fact]
+        public void TestPerfectGame()
+        {
+            RollMany(n: 12, pins: 10);
+
+            Assert.Equal(300, g.Score());
+        }
     }
 }
